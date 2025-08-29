@@ -1,19 +1,19 @@
-class Node {
-    int data;
-    Node next;
-    Node(int d) { data = d; }
-}
+class Singly1{
+    class Node {
+        String data;
+        Node next;
+        Node(String d) { data = d; }
+    }
 
-public class Singly {
     Node head;
 
-    void addFirst(int d) {
+    void addFirst(String d) {
         Node n = new Node(d);
         n.next = head;
         head = n;
     }
 
-    void addLast(int d) {
+    void addLast(String d) {
         Node n = new Node(d);
         if (head == null) { head = n; return; }
         Node t = head;
@@ -30,12 +30,6 @@ public class Singly {
         Node t = head;
         while (t.next.next != null) t = t.next;
         t.next = null;
-    }
-
-    int size() {
-        int c = 0;
-        for (Node t = head; t != null; t = t.next) c++;
-        return c;
     }
 
     void reverse() {
@@ -56,20 +50,16 @@ public class Singly {
     }
 
     public static void main(String[] args) {
-        Singly ll = new Singly();
-        ll.addFirst(10);
-        ll.addLast(20);
-        ll.addFirst(30); 
+        Singly1 ll = new Singly1();
+        ll.addFirst("My");
+        ll.addLast("Name");
+        ll.addFirst("Sova"); 
         ll.print();
-
         ll.delFirst(); 
         ll.print();
         ll.delLast(); 
         ll.print();
-        System.out.println("Size: " + ll.size());
-        ll.addLast(40); 
-        ll.addLast(50); 
-        ll.print();
+        ll.delLast(); 
         ll.reverse(); 
         ll.print();
     }
