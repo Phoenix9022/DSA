@@ -1,9 +1,18 @@
 import java.util.Arrays;
+import java.util.Scanner;
 public class Bubble {
     public static void main(String[] args) {
-        int[] Arr = {3,5,4,6,7};
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of elements:");
+        int n = sc.nextInt();
+        int[] Arr = new int[n];
+        System.out.println("Enter the elements:");
+        for (int i = 0; i < n; i++) {
+            Arr[i] = sc.nextInt();
+        }
+        System.out.println("Array before sorting: " + Arrays.toString(Arr));
         bubble(Arr,Arr.length,0);
-        System.out.println(Arrays.toString(Arr));
+        System.out.println("Array after sorting: " + Arrays.toString(Arr));
     }
     
     static void bubble(int[] Arr,int length ,int index){
